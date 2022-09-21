@@ -6,4 +6,3 @@ WORKDIR /code
 COPY requirements.txt /code/
 RUN pip install -r requirements.txt
 COPY . /code/
-LABEL org.opencontainers.image.source="https://github.com/daria516/python-docker"
