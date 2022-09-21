@@ -1,0 +1,47 @@
+{% extends 'base.html'%}
+    
+{% block content %}
+
+
+                <h1 class="title">
+                    {{ pokemon_info.name }}
+                </h1>
+
+                    <div class="box">
+                        <article class="media">
+                            <div class="media-left">
+                                <h1>{{pokemon_info.name}} <img src="{{image}}"></h1>
+                                <a href = "{% url 'add' pokemon_info.name %}">Add to your Pokemons</a> 
+                                <table width='1300px'><thead><tr><th>Features</th><th>Descriptions</th></tr></thead>
+                                        <tbody>
+                                            <tr><th>Base experience</th><th>{{pokemon_info.base_experience}}</th></tr>
+                                            <tr><th>Height</th><th>{{pokemon_info.height}}</th></tr>
+                                            <tr><th>Weight</th><th>{{pokemon_info.weight}}</th></tr>
+                                            <tr><th>Abilities</th><th> {{abilities_list}}  </th></tr>
+                                            <tr><th>Forms</th><th>{{forms_list}} </th></tr>
+                                            <tr><th>Game indices</th><th>{{game_indices_list}} </th></tr>
+                                            <tr><th>Held items</th><th> {{held_items_list}} </th></tr>
+                                            
+                                            <tr><th>Moves</th><th>{{ moves_str }}</th></tr>
+                                            
+                                            <tr><th>Species</th><th>{{pokemon_info.species}}</th></tr>
+                                            <tr><th>Stats</th><th>{{stats_list}} </th></tr>
+                                            <tr><th>Types</th><th>{{types_list}}</th></tr>
+                                        </tbody>
+                                </table>
+                                
+                                
+ 
+
+                            </div>
+                        </article>
+                        <a href="{% url 'all' %}">Go back to all pokemons</a>   
+                    </div>
+             
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    </footer>
+{% endblock %}

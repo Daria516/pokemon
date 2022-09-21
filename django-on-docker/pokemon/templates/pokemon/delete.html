@@ -1,0 +1,20 @@
+{% extends 'base.html'%}
+    
+{% block content %}
+
+            <div>
+                <h1 class="title">
+                    {% if answ %}
+                    Pokemon was successfully deleted from your account!
+                    {% else %}
+                    You don't have this pokemon
+                    {% endif %}
+                </h1>
+            </div>
+
+
+    <footer class="footer">
+
+    </footer>
+    {% endblock %}
+                    

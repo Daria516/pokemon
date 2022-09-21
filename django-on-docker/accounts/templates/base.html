@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" />
+</head>
+
+<body>
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    {% if user.is_authenticated %}
+                    <p>Hi, {{ user.username }}!</p>
+                    <a href="{% url 'mypokemon'%}" style="font-size: 20px">My pokemons | </a>
+                    <a href="{% url 'all'%}" style="font-size: 20px">All pokemons | </a>
+                    <a href="{% url 'alluserspokemons'%}" style="font-size: 20px">Users-Pokemons table</a>
+
+                    <div align="right">
+                        <a href="{% url 'logout'%}" style="font-size: 20px">Logout</a>
+                    </div>
+                    {% else %}
+                    <div align="right">
+                        <a href="{% url 'login'%}" style="font-size: 20px">Login</a>
+                    <br>
+                    <a href="{% url 'register'%}" style="font-size: 20px"> Sign up</a>
+                    </div>
+                    {% endif %}
+                    
+                </h1>
+            </div>
+        </div>
+    </section>
+    
+
+    {% block content %}
+    {% endblock %}
+
+    
+</body>
+
+</html>
+               

@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+    
+{% block content %}
+ <table>
+     <thead>
+         <tr><th>Username</th><th>Pokemon's name</th></tr>
+        </thead>
+     <tbody>
+        {% for result in result_sorted_by_user%}
+         <tr><th width="200px">{{result.user}}</th><th>{{result.pokemon}}</th></tr>
+         {% endfor %}
+        </tbody>
+ </table>
+    
+    {{result}}
+    
+    
+                    
+    <footer class="footer">
+
+    </footer>
+{% endblock %}
+               

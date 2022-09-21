@@ -1,0 +1,34 @@
+{% extends 'base.html'%}
+    
+{% block content %}    
+<div>
+ 
+
+
+    {% if user.is_authenticated %}
+                                
+        <div>Your Pokemons:
+        <table width='600px'>
+            <thead><tr><th width = '30%'>Name</th><th  width = '30%'>More info</th><tr></thead>
+            <tbody>
+                {% for pokemon in pokemons %}
+                    <tr>
+                        <th>{{ pokemon.pokemon }}</th>
+                        <th><a href = "{% url 'details' pokemon.pokemon %}">More info</a></th>
+                        <th><a href = "{% url 'delete' pokemon.pokemon %}">Delete from your Pokemons</a> </th>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </div>    
+    {% else %}
+        <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+ 
+                              
+</div>
+             
+
+
+
+{% endblock %}
